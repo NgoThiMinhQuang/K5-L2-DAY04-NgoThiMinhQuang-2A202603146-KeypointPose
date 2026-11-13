@@ -36,21 +36,28 @@ Rê chuột vào đúng keypoint cần thay đổi, nhấn `Q` để chuyển sa
 
 ### 2.1. Thống kê số lượng theo nhóm ảnh
 
-| Nhóm ảnh | Số ảnh | Số skeleton đã gán | Số người dưới 60 px (không gán) | Số poster / gương / màn hình bỏ qua | Thời gian thực tế (phút) |
-|---|---:|---:|---|---:|---|
-| `easy` | 5 | 5 | Không có số đếm độc lập được lưu | 0 ghi nhận | Không có nhật ký |
-| `occluded` | 3 | 5 | Không có số đếm độc lập được lưu | 0 ghi nhận | Không có nhật ký |
-| `back` | 2 | 4 | Không có số đếm độc lập được lưu | 0 ghi nhận | Không có nhật ký |
-| `small` | 1 | 3 | Không có số đếm độc lập được lưu | 0 ghi nhận | Không có nhật ký |
-| `crowd` | 1 | 3 | Không có số đếm độc lập được lưu | 0 ghi nhận | Không có nhật ký |
-| `faces` | 8 | 8 | — | — | Không có nhật ký |
-| **Tổng** | **20** | **28** | **Chưa có số liệu đếm độc lập** | **0 ghi nhận** | **Không có nhật ký** |
+**Bảng A – Person theo nhóm ảnh**
+
+| Nhóm ảnh | Số ảnh | Số skeleton |
+|---|---:|---:|
+| `easy` | 5 | 5 |
+| `occluded` | 3 | 5 |
+| `back` | 2 | 4 |
+| `small` | 1 | 3 |
+| `crowd` | 1 | 3 |
+| **Tổng Person** | **12** | **20** |
+
+**Bảng B – Face**
+
+| Nhóm ảnh | Số ảnh | Số skeleton |
+|---|---:|---:|
+| `faces` | 8 | 8 |
 
 Ghi chú:
-- Số skeleton được thống kê từ kết quả xuất COCO Keypoints 1.0 và đối chiếu theo nhóm ảnh trong assignment.
+- Tổng ảnh chính: 20. Tổng skeleton chính: 28.
+- Tổng ảnh Bonus: 8. Tổng skeleton Bonus: 12.
 - Số người dưới 60 px không được lưu thành danh sách riêng trong quá trình gán nhãn. Không thể suy ra số lượng này từ file COCO vì những đối tượng không được gán không xuất hiện trong annotations.
-- Qua các ảnh đã rà soát, không ghi nhận trường hợp người xuất hiện trên poster, gương hoặc màn hình cần tạo skeleton. Mannequin trong ảnh `000000090646.jpg` không được tính là người thật.
-- Thời gian thực tế của từng nhóm không có nhật ký ghi lại, vì vậy không sử dụng thời gian tham khảo của bài lab thay cho thời gian thực hiện.
+- Qua các ảnh đã rà soát, không ghi nhận trường hợp người xuất hiện trên poster, gương hoặc màn hình cần tạo skeleton. Mannequin trong ảnh `000000090646.jpg` không được tính là người thật và không được tạo skeleton.
 
 ### 2.2. Thống kê skeleton Person theo từng ảnh
 
@@ -77,32 +84,28 @@ Ghi chú:
 - Tổng số ảnh Face hoàn thành: 8/8.
 - Tổng số skeleton Face: 8.
 - Tổng số skeleton của hai nhóm chính: 28.
+- Tổng số ảnh Bonus hoàn thành: 8/8, gồm 3 ảnh Person và 5 ảnh Face.
+- Tổng số skeleton Bonus: 12.
 
-**Phân bổ thời gian ước tính hồi cứu (không phải nhật ký thời gian thực):**
+**Thời gian thực hiện:**
 
-| Giai đoạn | Nội dung | Thời gian |
-|---|---|---:|
-| CP1 | Kiểm tra label, skeleton, tên và thứ tự keypoint | 15 phút |
-| CP2 | Gán keypoint cho bộ ảnh chính Person và Face | 120 phút |
-| Bonus | Gán keypoint cho bộ ảnh Bonus Person và Face | 55 phút |
-| CP3 | Self-review, kiểm tra và hiệu chỉnh annotation | 20 phút |
-| **Tổng cộng** | | **210 phút** |
+- Giờ bắt đầu: 16:00 ngày 12/11/2026.
+- Giờ kết thúc: 19:30 ngày 12/11/2026.
+- Tổng khoảng thời gian: 210 phút (3 giờ 30 phút).
 
-**Mốc tiến độ phút 105:**
-- Ước tính hoàn thành khoảng 14–15/20 ảnh chính.
-- Thời điểm này đang trong giai đoạn CP2.
-- Đây là số liệu ước tính, không có nhật ký ghi nhận trực tiếp.
+Do không ghi nhật ký thời gian riêng cho từng checkpoint và từng nhóm ảnh, mình không phân bổ ngược số phút thực tế cho từng giai đoạn.
 
-**Thời gian trung bình mỗi ảnh (ước tính):**
-- Person: khoảng 7–8 phút/ảnh.
-- Face: khoảng 5–6 phút/ảnh.
-- Bonus: khoảng 6–7 phút/ảnh.
+**Thời gian trung bình quy đổi:**
+
+Tính trên tổng 28 ảnh chính và Bonus, thời gian trung bình quy đổi là 7,5 phút/ảnh (210/28). Đây chỉ là phép tính trung bình từ tổng thời gian, không phản ánh thời gian thao tác thực tế của từng ảnh.
+
+Lịch CP0–CP4 và thời gian Bonus được đối chiếu theo README của bài lab.
 
 ### 2.4. Những ảnh cần nhiều thời gian kiểm tra
 
 Ảnh `000000381889.jpg` là một trong những trường hợp cần tập trung nhiều thời gian tự kiểm tra. Ảnh có ba người đứng gần nhau, các bộ phận cơ thể chồng lấn, khiến việc xác định hướng trái/phải và vị trí hai khớp hông dễ nhầm lẫn. Trong CP3, mình đã phát hiện lỗi đảo `left_hip` và `right_hip`, sau đó sửa lại và kiểm tra lần nữa.
 
-Ảnh `000000572411.jpg` cũng có độ khó cao do người xuất hiện trong toa tàu có kích thước nhỏ, nhiều bộ phận cơ thể bị che khuất và các keypoint tập trung trong phạm vi hẹp. Việc xác định vị trí khớp cần được thực hiện cẩn thận để tránh đặt điểm sai hoặc nhầm trạng thái visibility.
+Ảnh `000000572411.jpg` cũng có độ khó cao do người xuất hiện trong toa tàu có kích thước nhỏ, nhiều bộ phận cơ thể bị che khuất và các keypoint tập trung trong phạm vi hẹp. Việc xác định vị trí khớp cần được thực hiện cẩn thận để tránh đặt điểm sai hoặc nhầm trạng thái visibility. Sau khi rà soát, kết quả kiểm tra cuối không còn cảnh báo.
 
 Ảnh `000000518966.jpg` có người bị cắt một phần ở mép phải khung hình. Khi gán nhãn cần phân biệt rõ khớp nằm ngoài khung hình với khớp bị che khuất nhưng vẫn có thể ước lượng vị trí.
 
@@ -166,9 +169,9 @@ Sau khi xuất, CVAT ghi:
 
 - `occluded` thành `v = 1`.
 - `outside` thành `v = 0`.
-- Tọa độ của điểm `outside` trong file vẫn giữ tọa độ cũ, không tự chuyển về `0, 0`. Đây là cách CVAT 2.x xuất dữ liệu, không phải lỗi cấu trúc. Các điểm `v = 0` không được tính vào số keypoint hợp lệ khi huấn luyện và chấm.
+Trong file COCO đã xuất, một số điểm có visibility v = 0 vẫn giữ tọa độ cũ. Mình đã đối chiếu kết quả với script tự kiểm của lab và xác nhận đây không phải lỗi cấu trúc dữ liệu. Các điểm có v = 0 không được tính là keypoint hợp lệ.
 
-Hai job chính đã chuyển sang completed trên CVAT: Có.
+Cả bốn job Person, Face, Bonus Person và Bonus Face đã được chuyển sang trạng thái completed trên CVAT trước khi xuất dữ liệu cuối cùng.
 
 ### Kết quả kiểm tra bộ dữ liệu chính
 
@@ -237,13 +240,13 @@ Các cảnh báo ở lần kiểm tra trước đã được rà soát và xử 
 
 4. File JSON xuất COCO Keypoints 1.0 (person_keypoints_default.json):
 
-   ![JSON export - annotations với mảng keypoints numpy/array](images/4_json_export_1.png)
+   ![JSON export - annotations với mảng keypoints](images/4_json_export_1.png)
    
-   *Ảnh 1: Thể hiện `annotations`, mảng `keypoints` (dạng numpy/array) với các giá trị x, y, v và `num_keypoints`.*
+   *Ảnh 1: Thể hiện `annotations`. Mảng keypoints gồm các bộ ba giá trị x, y, v cho từng điểm và `num_keypoints`.*
 
    ![JSON export - categories và schema 17 keypoint của Person](images/4_json_export_2.png)
    
-   *Ảnh 2: Thể hiện `categories`, danh sách 17 keypoint của Person và thứ tự các keypoint trong schema.*
+   *Ảnh 2: Thể hiện `categories`, schema và danh sách 17 keypoint của Person cùng thứ tự các keypoint.*
 
 Nguồn ảnh: COCO 2017 / bộ ảnh khuôn mặt được cung cấp trong lab.
 
@@ -280,7 +283,7 @@ Trong quá trình thực hiện, mình gặp một số khó khăn:
 - Với ảnh khuôn mặt có kính, ảnh mờ hoặc tóc che một phần, việc xác định chính xác khóe mắt và đường viền mí cần phóng to để quan sát.
 - Khi thao tác trên CVAT, cần chú ý rê chuột đúng vào keypoint trước khi đổi cờ visibility để tránh thay đổi nhầm điểm khác.
 
-Về xuất dữ liệu, mình sử dụng COCO Keypoints 1.0 và chạy script tự kiểm sau khi xuất. Một điểm cần lưu ý là tọa độ của keypoint có `v = 0` vẫn có thể được CVAT giữ nguyên trong file JSON. Mình đã đối chiếu với ghi chú của lab và xác định đây không phải lỗi cấu trúc file.
+Về xuất dữ liệu, mình sử dụng COCO Keypoints 1.0 và chạy script tự kiểm sau khi xuất. Trong file COCO xuất ra, một số điểm có visibility `v = 0` vẫn giữ tọa độ cũ. Mình đã đối chiếu kết quả với script tự kiểm của lab và xác nhận đây không phải lỗi cấu trúc dữ liệu. Các điểm có `v = 0` không được tính là keypoint hợp lệ.
 
 Sau khi chỉnh sửa và xuất lại, cả hai file chính và hai file bonus đều vượt qua bước kiểm tra tự động.
 
@@ -308,9 +311,13 @@ Sau khi chỉnh sửa và xuất lại, cả hai file chính và hai file bonus 
 
 | Ảnh | Số skeleton | Số người dưới 60 px | Ca khó nhất |
 |---|---:|---:|---|
-| `000000005294.jpg` | 1 | Chưa thống kê riêng | Đã xóa 2 skeleton không đủ điều kiện sau khi kiểm tra lại. |
+| `000000005294.jpg` | 1 | Chưa thống kê riêng | Trong quá trình kiểm tra lại ảnh `000000005294.jpg`, mình nhận thấy có hai skeleton không đáp ứng điều kiện gán nhãn nên đã xóa. Sau khi chỉnh sửa, ảnh còn lại một skeleton đủ điều kiện. |
 | `000000373426.jpg` | 3 | Chưa thống kê riêng | Ảnh có ba người, cần kiểm tra riêng từng skeleton. |
 | `000000565600.jpg` | 3 | Chưa thống kê riêng | Cần kiểm tra vị trí và visibility của từng người. |
+
+![Ảnh minh chứng Bonus Person](images/05_bonus_person.jpg)
+
+*Ảnh minh chứng cho phần gán nhãn Bonus Person.*
 
 Kết quả `src/check_submission.py` cho `NgoThiMinhQuang_bonus_persons.zip`:
 
@@ -343,6 +350,10 @@ Kết quả: ĐẠT
 Ảnh không màu khó hơn ảnh màu vì không có thông tin màu sắc để phân biệt các vùng trên khuôn mặt. Khi xác định vị trí mí mắt, khóe mắt và môi, mình phải dựa nhiều hơn vào đường nét, độ sáng tối và hình dạng của từng bộ phận.
 
 Đối với kính râm trên ảnh hồng ngoại, vẫn cần căn cứ vào mức độ che khuất thực tế. Nếu mắt bị che nhưng vị trí có thể ước lượng chắc chắn dựa vào gọng kính thì sử dụng `v = 1`. Nếu không thể xác định đáng tin cậy thì sử dụng `v = 0`.
+
+![Ảnh minh chứng Bonus Face](images/06_bonus_face.jpg)
+
+*Ảnh minh chứng cho phần gán nhãn Bonus Face.*
 
 Kết quả `src/check_submission.py` cho `NgoThiMinhQuang_bonus_faces.zip`:
 
