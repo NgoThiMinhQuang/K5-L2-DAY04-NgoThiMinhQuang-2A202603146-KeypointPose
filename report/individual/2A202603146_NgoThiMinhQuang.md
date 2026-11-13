@@ -233,7 +233,7 @@ Các cảnh báo ở lần kiểm tra trước đã được rà soát và xử 
 
 3. Một khuôn mặt đã gán 13 điểm, phóng to vùng mắt:
 
-   ![Khuôn mặt phóng to](images/3_mat_phong_to.png)
+   ![Khuôn mặt phóng to](images/04_face_annotation.jpg)
 
 4. File JSON xuất COCO Keypoints 1.0 (person_keypoints_default.json):
 
