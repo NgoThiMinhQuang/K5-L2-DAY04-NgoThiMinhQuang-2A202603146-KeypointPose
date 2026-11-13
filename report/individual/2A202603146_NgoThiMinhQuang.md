@@ -16,8 +16,8 @@
 - Bộ ảnh (`src/exports/assignment.json` do `lab.py setup` tạo): Có
 - Giờ bắt đầu: 16:00 ngày 12/11/2026
 - Giờ kết thúc: 19:30 ngày 12/11/2026
-- Tổng thời gian: 210 phút
-- Trung bình: 7,5 phút/ảnh (tính cả 28 ảnh chính và Bonus)
+- Tổng thời gian: 210 phút (3 giờ 30 phút)
+- Trung bình quy đổi: 7,5 phút/ảnh (tính cả 20 ảnh chính và 8 ảnh Bonus, tổng 28 ảnh). Đây là trung bình quy đổi từ tổng thời gian, không phải số phút được bấm giờ riêng cho từng ảnh.
 
 ## 1. Kiểm tra label (CP0)
 
@@ -77,8 +77,26 @@ Ghi chú:
 - Tổng số ảnh Face hoàn thành: 8/8.
 - Tổng số skeleton Face: 8.
 - Tổng số skeleton của hai nhóm chính: 28.
-- Số ảnh đã hoàn thành tại mốc phút 105: Không có nhật ký ghi nhận nên không xác định được.
-- Thời gian CP1, CP2 và CP3: Không có nhật ký thời gian thực tế.
+
+**Phân bổ thời gian ước tính hồi cứu (không phải nhật ký thời gian thực):**
+
+| Giai đoạn | Nội dung | Thời gian |
+|---|---|---:|
+| CP1 | Kiểm tra label, skeleton, tên và thứ tự keypoint | 15 phút |
+| CP2 | Gán keypoint cho bộ ảnh chính Person và Face | 120 phút |
+| Bonus | Gán keypoint cho bộ ảnh Bonus Person và Face | 55 phút |
+| CP3 | Self-review, kiểm tra và hiệu chỉnh annotation | 20 phút |
+| **Tổng cộng** | | **210 phút** |
+
+**Mốc tiến độ phút 105:**
+- Ước tính hoàn thành khoảng 14–15/20 ảnh chính.
+- Thời điểm này đang trong giai đoạn CP2.
+- Đây là số liệu ước tính, không có nhật ký ghi nhận trực tiếp.
+
+**Thời gian trung bình mỗi ảnh (ước tính):**
+- Person: khoảng 7–8 phút/ảnh.
+- Face: khoảng 5–6 phút/ảnh.
+- Bonus: khoảng 6–7 phút/ảnh.
 
 ### 2.4. Những ảnh cần nhiều thời gian kiểm tra
 
