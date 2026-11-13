@@ -14,8 +14,10 @@
 - Phiên bản CVAT (Help → About): Chưa xác nhận
 - Máy: Windows · RAM chưa ghi nhận · Chế độ CVAT: chưa xác định Full/Lite
 - Bộ ảnh (`src/exports/assignment.json` do `lab.py setup` tạo): Có
-- Giờ bắt đầu: Chưa ghi lại
-- Giờ kết thúc: Chưa ghi lại
+- Giờ bắt đầu: 16:00 ngày 12/11/2026
+- Giờ kết thúc: 19:30 ngày 12/11/2026
+- Tổng thời gian: 210 phút
+- Trung bình: 7,5 phút/ảnh (tính cả 28 ảnh chính và Bonus)
 
 ## 1. Kiểm tra label (CP0)
 
@@ -104,6 +106,8 @@ Trong quá trình gán nhãn, những trường hợp khó nhất chủ yếu li
 ## 4. Bảng tự review (CP3)
 
 Sau khi hoàn thành gán nhãn, mình kiểm tra lại các skeleton theo hướng từ ảnh cuối về ảnh đầu. Mình tập trung vào các lỗi trái/phải, vị trí keypoint, những điểm bị che và các trường hợp người bị cắt khỏi khung hình.
+
+Phần CP3: Hip swapped tại 000000381889 đã sửa; nose_tip đã đúng.
 
 | Ảnh | Người / mặt | Điểm | Mã lỗi | Ghi chú | Đã sửa? |
 |---|---|---|---|---|---|
