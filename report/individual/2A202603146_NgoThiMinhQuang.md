@@ -32,24 +32,27 @@ Rê chuột vào đúng keypoint cần thay đổi, nhấn `Q` để chuyển sa
 
 ## 2. Số lượng đã gán và thời gian (CP1, CP2)
 
-| Nhóm ảnh | Số ảnh | Số skeleton đã gán | Số người dưới 60 px (không gán) | Số poster / gương / màn hình bỏ qua | Thời gian (phút) |
-|---|---:|---:|---:|---:|---:|
-| `easy` | 5 | Đối chiếu assignment.json | Chưa thống kê riêng | Chưa thống kê riêng | Chưa ghi lại |
-| `occluded` | 3 | Đối chiếu assignment.json | Chưa thống kê riêng | Chưa thống kê riêng | Chưa ghi lại |
-| `back` | 2 | Đối chiếu assignment.json | Chưa thống kê riêng | Chưa thống kê riêng | Chưa ghi lại |
-| `small` | 1 | Đối chiếu assignment.json | Chưa thống kê riêng | Chưa thống kê riêng | Chưa ghi lại |
-| `crowd` | 1 | Đối chiếu assignment.json | Chưa thống kê riêng | Chưa thống kê riêng | Chưa ghi lại |
-| `faces` | 8 | 8 | — | — | Chưa ghi lại |
+### 2.1. Thống kê số lượng theo nhóm ảnh
 
-**Tổng kết số lượng:**
+| Nhóm ảnh | Số ảnh | Số skeleton đã gán | Số người dưới 60 px (không gán) | Số poster / gương / màn hình bỏ qua | Thời gian thực tế (phút) |
+|---|---:|---:|---|---:|---|
+| `easy` | 5 | 5 | Không có số đếm độc lập được lưu | 0 ghi nhận | Không có nhật ký |
+| `occluded` | 3 | 5 | Không có số đếm độc lập được lưu | 0 ghi nhận | Không có nhật ký |
+| `back` | 2 | 4 | Không có số đếm độc lập được lưu | 0 ghi nhận | Không có nhật ký |
+| `small` | 1 | 3 | Không có số đếm độc lập được lưu | 0 ghi nhận | Không có nhật ký |
+| `crowd` | 1 | 3 | Không có số đếm độc lập được lưu | 0 ghi nhận | Không có nhật ký |
+| `faces` | 8 | 8 | — | — | Không có nhật ký |
+| **Tổng** | **20** | **28** | **Chưa có số liệu đếm độc lập** | **0 ghi nhận** | **Không có nhật ký** |
 
-- Person: 12 ảnh, 20 skeleton.
-- Face: 8 ảnh, 8 skeleton.
-- Tổng cộng: 20 skeleton người và 8 skeleton khuôn mặt.
+Ghi chú:
+- Số skeleton được thống kê từ kết quả xuất COCO Keypoints 1.0 và đối chiếu theo nhóm ảnh trong assignment.
+- Số người dưới 60 px không được lưu thành danh sách riêng trong quá trình gán nhãn. Không thể suy ra số lượng này từ file COCO vì những đối tượng không được gán không xuất hiện trong annotations.
+- Qua các ảnh đã rà soát, không ghi nhận trường hợp người xuất hiện trên poster, gương hoặc màn hình cần tạo skeleton. Mannequin trong ảnh `000000090646.jpg` không được tính là người thật.
+- Thời gian thực tế của từng nhóm không có nhật ký ghi lại, vì vậy không sử dụng thời gian tham khảo của bài lab thay cho thời gian thực hiện.
 
-Số skeleton Person theo từng ảnh:
+### 2.2. Thống kê skeleton Person theo từng ảnh
 
-| Ảnh | Skeleton |
+| Ảnh | Số skeleton |
 |---|---:|
 | `000000090646.jpg` | 1 |
 | `000000157271.jpg` | 2 |
@@ -65,13 +68,26 @@ Số skeleton Person theo từng ảnh:
 | `000000572411.jpg` | 3 |
 | **Tổng** | **20** |
 
-- Số ảnh người đã xong ở mốc phút 105: Chưa ghi lại.
-- Thời gian thực tế (phút): CP1 chưa ghi lại · CP2 chưa ghi lại · CP3 chưa ghi lại.
-- Ảnh tốn thời gian nhất là `000000381889.jpg`, vì trong ảnh có ba người đứng gần nhau, nhiều bộ phận chồng lấn. Việc xác định hướng trái/phải và vị trí hai khớp hông cần quan sát kỹ. Ngoài ra, ảnh `000000572411.jpg` cũng mất thời gian rà soát do người trong toa tàu có kích thước nhỏ và nhiều bộ phận bị che khuất.
+### 2.3. Tổng kết tiến độ và thời gian
 
-**Ghi chú về đối tượng không gán:**
+- Tổng số ảnh Person hoàn thành: 12/12.
+- Tổng số skeleton Person: 20.
+- Tổng số ảnh Face hoàn thành: 8/8.
+- Tổng số skeleton Face: 8.
+- Tổng số skeleton của hai nhóm chính: 28.
+- Số ảnh đã hoàn thành tại mốc phút 105: Không có nhật ký ghi nhận nên không xác định được.
+- Thời gian CP1, CP2 và CP3: Không có nhật ký thời gian thực tế.
 
-Ở ảnh `000000090646.jpg`, mình chỉ gán skeleton cho người thật trong ảnh, không gán cho mannequin đứng bên cạnh. Với những người có kích thước dưới 60 px hoặc không đủ điều kiện xác định keypoint, mình không tạo skeleton. Số lượng cụ thể cần được đối chiếu lại từ ảnh gốc và `assignment.json` trước khi chốt bảng thống kê.
+### 2.4. Những ảnh cần nhiều thời gian kiểm tra
+
+Ảnh `000000381889.jpg` là một trong những trường hợp cần tập trung nhiều thời gian tự kiểm tra. Ảnh có ba người đứng gần nhau, các bộ phận cơ thể chồng lấn, khiến việc xác định hướng trái/phải và vị trí hai khớp hông dễ nhầm lẫn. Trong CP3, mình đã phát hiện lỗi đảo `left_hip` và `right_hip`, sau đó sửa lại và kiểm tra lần nữa.
+
+Ảnh `000000572411.jpg` cũng có độ khó cao do người xuất hiện trong toa tàu có kích thước nhỏ, nhiều bộ phận cơ thể bị che khuất và các keypoint tập trung trong phạm vi hẹp. Việc xác định vị trí khớp cần được thực hiện cẩn thận để tránh đặt điểm sai hoặc nhầm trạng thái visibility.
+
+Ảnh `000000518966.jpg` có người bị cắt một phần ở mép phải khung hình. Khi gán nhãn cần phân biệt rõ khớp nằm ngoài khung hình với khớp bị che khuất nhưng vẫn có thể ước lượng vị trí.
+
+Nhìn chung, những khó khăn chính trong CP1 và CP2 tập trung ở việc nhận diện người trong điều kiện che khuất, xác định chính xác các khớp trái/phải và lựa chọn visibility phù hợp. Việc tự kiểm tra lại sau khi gán nhãn giúp phát hiện và sửa những sai sót trước khi xuất dữ liệu.
+
 
 ## 3. Bảng ca khó (CP1, CP2)
 
