@@ -9,7 +9,7 @@
 
 - Họ tên: Ngô Thị Minh Quang
 - MSSV: 2A202603146
-- Email: Chưa điền
+- Email: minhquang17012005@gmail.com
 - Link repository: https://github.com/NgoThiMinhQuang/K5-L2-DAY04-NgoThiMinhQuang-2A202603146-KeypointPose
 - Phiên bản CVAT (Help → About): Chưa xác nhận
 - Máy: Windows · RAM chưa ghi nhận · Chế độ CVAT: chưa xác định Full/Lite
