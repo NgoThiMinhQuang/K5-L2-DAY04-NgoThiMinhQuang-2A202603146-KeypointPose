@@ -217,9 +217,15 @@ Các cảnh báo ở lần kiểm tra trước đã được rà soát và xử 
 
    ![Khuôn mặt phóng to](images/3_mat_phong_to.png)
 
-4. Một đoạn JSON xuất của một người:
+4. File JSON xuất COCO Keypoints 1.0 (person_keypoints_default.json):
 
-   ![JSON export](images/4_json_export.png)
+   ![JSON export - categories và schema 17 keypoint của Person](images/4_json_export_1.png)
+   
+   *Ảnh 1: Thể hiện `categories`, danh sách 17 keypoint của Person và thứ tự các keypoint trong schema.*
+
+   ![JSON export - annotations với mảng keypoints](images/4_json_export_2.png)
+   
+   *Ảnh 2: Thể hiện `annotations`, mảng `keypoints` (x,y,v), `num_keypoints`.*
 
 Nguồn ảnh: COCO 2017 / bộ ảnh khuôn mặt được cung cấp trong lab.
 
