@@ -257,8 +257,6 @@ Sau khi chỉnh sửa và xuất lại, cả hai file chính và hai file bonus 
 
 - CVAT: tạo và chỉnh sửa các skeleton Person, Face.
 - Python: chạy công cụ xuất dữ liệu và kiểm tra file.
-- ChatGPT: hỗ trợ giải thích guideline, rà soát các trường hợp khó và kiểm tra báo cáo.
-- OpenCode: hỗ trợ đưa báo cáo vào repository và thực hiện các thao tác Git.
 
 ## Bonus (nếu làm)
 
